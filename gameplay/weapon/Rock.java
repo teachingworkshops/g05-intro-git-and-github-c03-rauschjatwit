@@ -8,8 +8,14 @@ public class Rock extends Weapon{
         chanceOfAppear = 0.5;
     }
 
-    public void use(){
+    @Override
+    public boolean use(){
         uses--;
-        usable = false;
+        double kill = Math.random();
+        if(kill <= chanceOfKill){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
