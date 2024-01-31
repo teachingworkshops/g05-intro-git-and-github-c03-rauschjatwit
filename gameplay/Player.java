@@ -35,4 +35,11 @@ public class Player {
             alive = false;
         }
     }
+    public void displayBackpack() {
+        System.out.println("Items in your backpack:");
+        for (int i = 0; i < backpack.size(); i++) {
+            System.out.println((i + 1) + ". " + backpack.get(i).getClass().getSimpleName());
+            //System.out.println((i + 1) + ". " + backpack.get(i).toString());
+        }
+    }
 }
