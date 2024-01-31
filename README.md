@@ -8,9 +8,9 @@ TODO:
 - Daytime events (weighted chance of finding food/water/chests)
     - Randomized items in chests
         - Asking if the player wants to add the item to backback if the backpack isn't full
-- Nightime events (finding an enemy)
+- (E) Nightime events (finding an enemy)
     - "Fighting" enemies
     - Displaying backpack for the player to chose their weapon if it's not empty
     - Removing items from the backpack if they've been used max # of times
 - Hunger/Thirst for player
-- All Weapon classes
+- (J) All Weapon classes
