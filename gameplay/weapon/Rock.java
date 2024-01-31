@@ -7,4 +7,9 @@ public class Rock extends Weapon{
         chanceOfKill = 0.2;
         chanceOfAppear = 0.5;
     }
+
+    public void use(){
+        uses--;
+        usable = false;
+    }
 }

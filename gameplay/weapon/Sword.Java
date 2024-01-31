@@ -7,4 +7,9 @@ public class Sword extends Weapon{
         chanceOfKill = 0.75;
         chanceOfAppear = 0.15;
     }
+
+    public void use(){
+        uses--;
+        usable = true;
+    }
 }

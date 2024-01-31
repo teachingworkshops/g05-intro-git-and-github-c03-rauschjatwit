@@ -7,4 +7,9 @@ public class Bomb extends Weapon{
         chanceOfKill = 1;
         chanceOfAppear = 0.1;
     }
+
+    public void use(){
+        uses--;
+        usable = false;
+    }
 }
