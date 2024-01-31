@@ -8,8 +8,14 @@ public class Bomb extends Weapon{
         chanceOfAppear = 0.1;
     }
 
-    public void use(){
+    @Override
+    public boolean use(){
         uses--;
-        usable = false;
+        return true;
+    }
+
+    @Override
+    public String toString(){
+        return "bomb";
     }
 }

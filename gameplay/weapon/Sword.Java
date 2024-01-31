@@ -8,8 +8,19 @@ public class Sword extends Weapon{
         chanceOfAppear = 0.15;
     }
 
-    public void use(){
+    @Override
+    public boolean use(){
         uses--;
-        usable = true;
+        double kill = Math.random();
+        if(kill <= chanceOfKill){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public String toString(){
+        return "sword";
     }
 }

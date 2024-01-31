@@ -8,13 +8,19 @@ public class WoodenSpear extends Weapon{
         chanceOfAppear = 0.25;
     }
 
-    public void use(){
+    @Override
+    public boolean use(){
         uses--;
-        if(uses != 0 && uses > 0){
-            usable = true;
+        double kill = Math.random();
+        if(kill <= chanceOfKill){
+            return true;
+        }else{
+            return false;
         }
-        else{
-            usable = false;
-        }
+    }
+
+    @Override
+    public String toString(){
+        return "wooden spear";
     }
 }

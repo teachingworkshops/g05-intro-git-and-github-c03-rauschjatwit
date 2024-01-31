@@ -18,4 +18,9 @@ public class Rock extends Weapon{
             return false;
         }
     }
+
+    @Override
+    public String toString(){
+        return "rock";
+    }
 }
