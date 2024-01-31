@@ -31,7 +31,8 @@ public class Gameplay {
                 daytime = true;
             }
         }
-        System.out.printf("\nIt is %s.\n", timeOfDay());
+        System.out.printf("\nIt is %s", timeOfDay());
+        System.out.printf("\nHunger: %d\nThirst: %d\n", player.hunger, player.thirst);
         System.out.println(progress.printProgressBar());
         
         if(daytime){
@@ -40,11 +41,13 @@ public class Gameplay {
             nighttimeMove();
         }
         moves++;
+        player.updatePlayer();
     }
     
     private void daytimeMove(){
         points++;
     }
+
     private void nighttimeMove(){
         if(moves%15==0){
             if(moves == 15){
