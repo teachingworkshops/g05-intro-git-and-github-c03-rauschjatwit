@@ -1,11 +1,11 @@
 package gameplay.weapon;
 
 
-public class Rock extends Weapon{
-    public Rock(){
-        uses = 1;
-        chanceOfKill = 0.2;
-        chanceOfAppear = 0.5;
+public class WoodenSpear extends Weapon{
+    public WoodenSpear(){
+        uses = 3;
+        chanceOfKill = 0.5;
+        chanceOfAppear = 0.25;
     }
 
     @Override
@@ -21,6 +21,6 @@ public class Rock extends Weapon{
 
     @Override
     public String toString(){
-        return "rock";
+        return "wooden spear";
     }
 }

@@ -5,11 +5,14 @@ public abstract class Weapon {
     public double chanceOfKill;
     public double chanceOfAppear;
 
-    public Weapon(){
+    public Weapon (){
     }
-    
+
     public void use(){
         uses--;
     }
 
+    public String toString(){
+        return = " ";
+    }
 }
