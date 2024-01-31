@@ -71,6 +71,10 @@ public class StartGame {
             Gameplay game = new Gameplay(player, gameLength, stdin);
 
             while(game.points < gameLength){
+                if(!player.alive){
+                    System.out.println("\nYou died!");
+                    break;
+                }
                 game.move();
             }
             System.out.println("\nend of game");
