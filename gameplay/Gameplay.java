@@ -5,6 +5,7 @@ import java.util.*;
 import gameplay.weapon.*;
 
 public class Gameplay {
+    private int currMoves;
     protected int moves;
     public int points;
     private boolean daytime;
@@ -16,6 +17,7 @@ public class Gameplay {
     
 
     public Gameplay(Player player, int maxPoints, Scanner stdin){
+        currMoves = 0;
         moves = 0;
         points = 0;
         daytime = true;
@@ -27,13 +29,19 @@ public class Gameplay {
     }
 
     public void move(){
+        if(points < 0){
+            points = 0;
+        }
         if(daytime){
-            if(moves % 15 == 0 && moves != 0){
-                daytime = false;
-            }  
+           if(currMoves == 15){
+             daytime = false;
+             currMoves = 0;
+           }
         }else{
-            if((moves-5) % 15 == 0 && moves != 0){
+            if(currMoves == 5){
                 daytime = true;
+                currMoves = 0;
+
             }
         }
         System.out.printf("\nIt is %s", timeOfDay());
@@ -48,10 +56,10 @@ public class Gameplay {
             daytimeMove();
             daytimeEvents();
         }else{
-            nighttimeMove();
-            nightEvents();
+            startNight();
         }
         moves++;
+        currMoves++;
         player.updatePlayer();
     }
     
@@ -60,27 +68,28 @@ public class Gameplay {
     }
 
 
-    private void nighttimeMove(){
-        if(moves%15==0){
-            if(moves == 15){
-                System.out.println("\n On your journey, you will have the option to travel though the night or wait till morning to continue on.\n\n Waiting till morning will make your journey longer.\n If you chose to keep going through the night, you will likely encounter monsters in your path!\n You must fight them with whatever you have in your backpack.\n\n  Falling in battle won't break your stride, but triumphs will swiftly shorten the ride...\n");
-            }
+    private void startNight(){
+        if(moves == 15){
+            System.out.println("\n On your journey, you will have the option to travel though the night or wait till morning to continue on.\n\n Waiting till morning will make your journey longer.\n If you chose to keep going through the night, you will likely encounter monsters in your path!\n You must fight them with whatever you have in your backpack.\n\n  Falling in battle won't break your stride, but triumphs will swiftly shorten the ride...\n");
+        }
+        if(currMoves==0){
             System.out.print("\nWould you like to brave the night?\n\t> Keep going (y)\n\t> Sleep till morning (n)\n> ");
             String response = stdin.next();
             if(response.toLowerCase().equals("y")){
-                System.out.println("Carry on!");
-                
+                System.out.println("Carry on!");                
             }else if(response.toLowerCase().equals("n")){
                 daytime = true;
+                currMoves = 0;
                 System.out.println("You sleep till morning...");
-
             }
             else{
                 System.out.println("Invalid input");
-                nighttimeMove();
+                startNight();
             }
-        } 
-        points += 2;
+        }
+        if(!daytime){
+            nightEvents();
+        }
     }
 
     
@@ -115,7 +124,7 @@ public class Gameplay {
     }
 
     private void nightEvents() {
-        
+        points += 2;
             if (random.nextInt(100) < 70) {
                 System.out.println("You encounter an enemy!");
                 handleEnemyEncounter();
