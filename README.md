@@ -1,7 +1,7 @@
 
 <h1>Text Adventure Project: Group c03</h1>
 
-By: Enrique Esteve, Joseline Mejia, Lindsey Johnson, and Sam Helinski
+<em> By: Enrique Esteve, Joseline Mejia, Lindsey Johnson, and Sam Helinski </em> 
 
 **How to run the game**:
 Download the jar file, then save it to a place of preference. You will need to run the jar file with this command in the terminal:java -jar Gamec03.jar (Make sure you're in the right directory). The Jar file is located in the releases.
