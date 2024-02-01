@@ -70,6 +70,16 @@ public class Gameplay {
         } 
         points += 2;
     }
+
+    public void endOfGameStats(){
+        System.out.print("\nGame Stats:");
+        System.out.printf("\n\tProgres Points (MAX %d):.%d",maxPoints,points);
+        System.out.printf("\n\tDays Traveled:............%.2f",moves/20.0);
+        System.out.printf("\n\tEnemies Fought............%d",0);
+        System.out.printf("\n\tBattles Won...............%d",0);
+        System.out.printf("\n\tChests opened.............%d\n",0);
+
+    }
     
     private String timeOfDay(){
         if(daytime){

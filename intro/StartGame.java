@@ -72,11 +72,19 @@ public class StartGame {
 
             while(game.points < gameLength){
                 if(!player.alive){
-                    System.out.println("\nYou died!");
+                    System.out.println("\nYou died... Better luck next time!");
+
                     break;
                 }
                 game.move();
             }
-            System.out.println("\nend of game");
+            if(game.points >= gameLength){
+                System.out.printf("\nCongratulations! You have finally reached the %s!", location2);
+
+            }else if(game.points <= 0){
+                System.out.printf("\nEek! All those lost battles really set you back...\nBetter luck next time!");
+
+            }
+            game.endOfGameStats();
         }
 }
