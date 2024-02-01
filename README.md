@@ -17,7 +17,7 @@ Progress is quantified by points earned through moving forward, winning battles,
 
 Through a blend of strategic resource management, exploration, and combat, this game offers a rich narrative experience where choices significantly impact your adventure's outcome. Will you survive the journey and reach your dream destination?
     
-About the items in the game:
+*About the items in the game*:
 You can find 4 items in a chest
 Rock:
 1 use, 20% chance of defeating an enemy, 50% chance of appearing in a chest
