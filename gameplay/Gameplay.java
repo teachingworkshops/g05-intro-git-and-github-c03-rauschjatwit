@@ -46,6 +46,7 @@ public class Gameplay {
           }
         if(daytime){
             daytimeMove();
+
         }else{
             nighttimeMove();
             nightEvents();
@@ -57,6 +58,7 @@ public class Gameplay {
     private void daytimeMove(){
         points++;
     }
+
 
     private void nighttimeMove(){
         if(moves%15==0){
@@ -79,6 +81,29 @@ public class Gameplay {
             }
         } 
         points += 2;
+    }
+
+    
+    private void daytimeEvents() {
+        int eventChance = random.nextInt(100);
+
+        if (eventChance < 25) {
+            // 25% chance of finding food
+            System.out.println("You've found some food (animals/berries/etc)!");
+            player.hunger += 5;
+
+        } else if (eventChance < 50) {
+            // Additional 25% chance (cumulative 50%) of finding water
+            System.out.println("You've found a river with fresh water!");
+            player.thirst += 5;
+        } else if (eventChance < 70) {
+            // Additional 20% chance (cumulative 70%) of finding a chest
+            System.out.println("You've stumbled upon a mysterious chest!");
+            // Method for the chest 
+        } else {
+            // Remaining 30%
+            System.out.println("You find nothing of interest.");
+        }
     }
 
     private void nightEvents() {
