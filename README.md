@@ -4,7 +4,7 @@
 By: Enrique Esteve, Joseline Mejia, Lindsey Johnson, and Sam Helinski
 
 **How to run the game**:
-Download the jar file, then save it to a place of preference. You will need to run the jar file with this command in the terminal:java -jar Gamec03.jar (Make sure you're in the right directory) 
+Download the jar file, then save it to a place of preference. You will need to run the jar file with this command in the terminal:java -jar Gamec03.jar (Make sure you're in the right directory). The Jar file is located in the releases.
 
 **About the Game**
 In this immersive text-based adventure game, you embark on a perilous journey from a randomized starting location, aiming to reach a dream destination. As a unique character endowed with specific traits and a starting item, you navigate through a world brimming with diverse environments, from urban megacities to enchanted forests and beyond. 
