@@ -5,22 +5,32 @@ import java.util.*;
 import gameplay.weapon.*;
 
 public class Gameplay {
+    private int enemiesFought;
+    private int battlesWon;
+    private int chestsOpened;
+
     private int currMoves;
     protected int moves;
     public int points;
     private boolean daytime;
+    protected int maxPoints;
+
     protected Player player;
     private Scanner stdin;
     private ProgressBar progress;
-    protected int maxPoints;
     private Random random;
     
 
     public Gameplay(Player player, int maxPoints, Scanner stdin){
+        chestsOpened = 0;
+        battlesWon = 0;
+        enemiesFought = 0;
+
         currMoves = 0;
         moves = 0;
         points = 0;
         daytime = true;
+
         this.player = player;
         this.stdin = stdin;
         progress = new ProgressBar(this);
@@ -53,7 +63,7 @@ public class Gameplay {
             Thread.currentThread().interrupt();
           }
         if(daytime){
-            daytimeMove();
+            points++;
             daytimeEvents();
         }else{
             startNight();
@@ -62,11 +72,6 @@ public class Gameplay {
         currMoves++;
         player.updatePlayer();
     }
-    
-    private void daytimeMove(){
-        points++;
-    }
-
 
     private void startNight(){
         if(moves == 15){
@@ -107,7 +112,7 @@ public class Gameplay {
             player.thirst += 5;
         } else if (eventChance < 70) {
             // Additional 20% chance (cumulative 70%) of finding a chest
-            
+            chestsOpened++;
             System.out.println("You've stumbled upon a mysterious chest!");
             if (player.isBackpackFull()) {
                 System.out.println("Your backpack is full. You can't pick up any more items.");
@@ -126,6 +131,7 @@ public class Gameplay {
     private void nightEvents() {
         points += 2;
             if (random.nextInt(100) < 70) {
+                enemiesFought++;
                 System.out.println("You encounter an enemy!");
                 handleEnemyEncounter();
             } 
@@ -150,6 +156,7 @@ private void handleEnemyEncounter() {
 
         if (isEnemyDefeated) {
             System.out.println("You defeated the enemy!");
+            battlesWon++;
             points+=15;
         } else {
             System.out.println("You failed to defeat the enemy.");
@@ -182,9 +189,9 @@ private void handleEnemyEncounter() {
         System.out.print("\nGame Stats:");
         System.out.printf("\n\tProgres Points (MAX %d):.%d",maxPoints,points);
         System.out.printf("\n\tDays Traveled:............%.2f",moves/20.0);
-        System.out.printf("\n\tEnemies Fought............%d",0);
-        System.out.printf("\n\tBattles Won...............%d",0);
-        System.out.printf("\n\tChests opened.............%d\n",0);
+        System.out.printf("\n\tEnemies Fought............%d",enemiesFought);
+        System.out.printf("\n\tBattles Won...............%d",battlesWon);
+        System.out.printf("\n\tChests opened.............%d\n",chestsOpened);
 
     }
     

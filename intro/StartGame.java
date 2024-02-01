@@ -80,9 +80,6 @@ public class StartGame {
             if(game.points >= gameLength){
                 System.out.printf("\nCongratulations! You have finally reached the %s!", location2);
             }
-            if(game.points <= 0){
-                System.out.printf("\nEek! All those lost battles really set you back...\nBetter luck next time!");
-            }
         
             game.endOfGameStats();
         }
