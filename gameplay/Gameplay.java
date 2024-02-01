@@ -39,7 +39,11 @@ public class Gameplay {
         System.out.printf("\nIt is %s", timeOfDay());
         System.out.printf("\nHunger: %d\nThirst: %d\n", player.hunger, player.thirst);
         System.out.println(progress.printProgressBar());
-        
+        try {
+            Thread.sleep(1000);
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+          }
         if(daytime){
             daytimeMove();
         }else{
@@ -63,7 +67,6 @@ public class Gameplay {
             String response = stdin.next();
             if(response.toLowerCase().equals("y")){
                 System.out.println("Carry on!");
-                
                 
             }else if(response.toLowerCase().equals("n")){
                 daytime = true;
