@@ -8,6 +8,8 @@ public abstract class Weapon {
     public Weapon (){
     }
 
+    public boolean use(){
+        return false;
    
     
     public boolean use(){
@@ -16,6 +18,6 @@ public abstract class Weapon {
     }
 
     public String toString(){
-        return  " ";
+        return "";
     }
 }
