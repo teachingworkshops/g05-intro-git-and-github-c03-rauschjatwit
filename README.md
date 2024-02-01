@@ -1,9 +1,13 @@
 # g05-intro-git-and-github-c03
 
-Text Adventure Project
-By: Enrique Esteve, Joseline Mejia, Lindsey Johnson, and Sam Helinski 
+**Text Adventure Project**
+By: Enrique Esteve, Joseline Mejia, Lindsey Johnson, and Sam Helinski
 
-In this immersive text-based adventure game, you embark on a perilous journey from a randomized starting location, aiming to reach a dream destination. As a unique character endowed with specific traits and a starting item, you navigate through a world brimming with diverse environments, from urban megacities to enchanted forests and beyond.
+**How to run the game**:
+Download the jar file, then save it to a place of preference. You will need to run the jar file with this command in the terminal:java -jar Gamec03.jar (Make sure you're in the right directory) 
+
+**About the Game**
+In this immersive text-based adventure game, you embark on a perilous journey from a randomized starting location, aiming to reach a dream destination. As a unique character endowed with specific traits and a starting item, you navigate through a world brimming with diverse environments, from urban megacities to enchanted forests and beyond. 
 
 Your character, defined by a combination of traits like "Shadowy," "Tech-savvy," or "Mystic," and a type such as "Human," "Robot," or "Mutant," faces various challenges and encounters. The game's core mechanics revolve around managing resources like hunger and thirst, engaging in combat with enemies, and exploring daytime and nighttime events.
 
@@ -17,7 +21,7 @@ Progress is quantified by points earned through moving forward, winning battles,
 
 Through a blend of strategic resource management, exploration, and combat, this game offers a rich narrative experience where choices significantly impact your adventure's outcome. Will you survive the journey and reach your dream destination?
     
-_*About the items in the game*_:
+**About the items in the game**:
 You can find 4 items in a chest
 Rock:
 1 use, 20% chance of defeating an enemy, 50% chance of appearing in a chest
@@ -27,3 +31,4 @@ Wooden spear:
 3 uses, 50% chance of defeating an enemy, 25% chance of appearing in a chest
 Sword:
 Unlimited uses, 75% chance of defeating an enemy, 15% chance of appearing in a chest
+
