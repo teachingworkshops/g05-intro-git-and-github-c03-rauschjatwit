@@ -8,7 +8,9 @@ public abstract class Weapon {
     public Weapon (){
     }
 
+    
     public boolean use(){
+        uses--;
         return false;
     }
 
