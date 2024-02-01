@@ -4,6 +4,8 @@ import java.util.*;
 
 import gameplay.weapon.Weapon;
 
+import gameplay.weapon.*;
+
 public class Gameplay {
     protected int moves;
     public int points;
@@ -143,6 +145,23 @@ private void handleEnemyEncounter() {
     }
    
 }
+    public Weapon getRandomItem(){
+        double randItem = Math.random();
+        Bomb bomb = new Bomb();
+        Sword sword = new Sword();
+        WoodenSpear spear = new WoodenSpear();
+        Rock rock = new Rock();
+
+        if(randItem <= bomb.chanceOfAppear){
+            return bomb;
+        }else if(randItem <= sword.chanceOfAppear){
+            return sword;
+        }else if(randItem <= spear.chanceOfAppear){
+            return spear;
+        }else{
+            return rock;
+        }
+    }
     
     private String timeOfDay(){
         if(daytime){
