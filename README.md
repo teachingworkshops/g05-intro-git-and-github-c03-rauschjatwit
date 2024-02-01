@@ -1,6 +1,5 @@
-# g05-intro-git-and-github-c03
 
-<h1>**Text Adventure Project**</h1>
+<h1>Text Adventure Project: Group c03</h1>
 
 By: Enrique Esteve, Joseline Mejia, Lindsey Johnson, and Sam Helinski
 
