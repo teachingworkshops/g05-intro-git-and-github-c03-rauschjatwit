@@ -1,6 +1,7 @@
 # g05-intro-git-and-github-c03
 
 **Text Adventure Project**
+
 By: Enrique Esteve, Joseline Mejia, Lindsey Johnson, and Sam Helinski
 
 **How to run the game**:
