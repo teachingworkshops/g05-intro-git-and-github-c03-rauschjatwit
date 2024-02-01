@@ -39,6 +39,7 @@ public class StartGame {
             Scanner stdin = new Scanner(System.in);
 
             System.out.print(asciiArt);
+            System.out.println("\nWelcome to our idle game of chance! Test your luck gathering items during the day and fighting enemies through the night!\n\nYour objective is to reach your location as quick as possible. Defeat enemies in the night to get to your destination faster,\nbut losing a battle will lose progress to your end location.\n \n\tLet the games begin! \n");
             gameIntro(stdin);
             
             stdin.close();
@@ -46,7 +47,7 @@ public class StartGame {
 
         public static void gameIntro(Scanner stdin){
             GenerateStory.randomize();
-            System.out.printf("\nYou are trapped in the %s! \nYou would do anything to escape and journey to the one place you've always dreamed of, the %s...\nAs a %s %s, you bring with you a <Starting Item>\n", location1, location2, trait, character);
+            System.out.printf("\nYou are trapped in the %s! \nYou would do anything to escape and journey to the one place you've always dreamed of, the %s...\n", location1, location2, trait, character);
             System.out.print("\nAre you ready to begin your journey?\n\t> Yes (y)\n\t> Regenerate story (r)\n\t> Quit (q)\n> ");
             String startYN = stdin.next();
             
