@@ -16,9 +16,9 @@ public class Player {
         thirst=25;
     }
 
-    public ArrayList<Weapon> addItemToBackpack(Weapon newWeapon){
+    public void  addItemToBackpack(Weapon newWeapon){
         backpack.add(newWeapon);
-        return backpack;
+        
     }
 
     public void updatePlayer(){
@@ -38,8 +38,11 @@ public class Player {
     public void displayBackpack() {
         System.out.println("Items in your backpack:");
         for (int i = 0; i < backpack.size(); i++) {
-            System.out.println((i + 1) + ". " + backpack.get(i).getClass().getSimpleName());
-            //System.out.println((i + 1) + ". " + backpack.get(i).toString());
+           // System.out.println((i + 1) + ". " + backpack.get(i).getClass().getSimpleName());
+            System.out.println((i + 1) + ". " + backpack.get(i).toString());
         }
+    }
+    public boolean isBackpackFull() {
+        return backpack.size() >= 3; 
     }
 }

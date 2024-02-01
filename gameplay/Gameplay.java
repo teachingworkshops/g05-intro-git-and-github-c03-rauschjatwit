@@ -2,8 +2,6 @@ package gameplay;
 
 import java.util.*;
 
-import gameplay.weapon.Weapon;
-
 import gameplay.weapon.*;
 
 public class Gameplay {
@@ -48,7 +46,7 @@ public class Gameplay {
           }
         if(daytime){
             daytimeMove();
-
+            daytimeEvents();
         }else{
             nighttimeMove();
             nightEvents();
@@ -100,8 +98,16 @@ public class Gameplay {
             player.thirst += 5;
         } else if (eventChance < 70) {
             // Additional 20% chance (cumulative 70%) of finding a chest
+            
             System.out.println("You've stumbled upon a mysterious chest!");
-            // Method for the chest 
+            if (player.isBackpackFull()) {
+                System.out.println("Your backpack is full. You can't pick up any more items.");
+            } else {
+                Weapon foundItem = getRandomItem();
+                player.addItemToBackpack(foundItem); 
+             //   System.out.println("You found a " + foundItem.getClass().getSimpleName() + " in the chest!");
+                System.out.println("You found a " + foundItem.toString() + " in the chest!");
+    }
         } else {
             // Remaining 30%
             System.out.println("You find nothing of interest.");
