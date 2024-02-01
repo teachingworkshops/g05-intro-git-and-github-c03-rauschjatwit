@@ -13,6 +13,7 @@ public class Gameplay {
     private ProgressBar progress;
     protected int maxPoints;
     private Random random;
+    
 
     public Gameplay(Player player, int maxPoints, Scanner stdin){
         moves = 0;
@@ -22,6 +23,7 @@ public class Gameplay {
         this.stdin = stdin;
         progress = new ProgressBar(this);
         this.maxPoints = maxPoints;
+        this.random = new Random();
     }
 
     public void move(){
@@ -42,6 +44,7 @@ public class Gameplay {
             daytimeMove();
         }else{
             nighttimeMove();
+            nightEvents();
         }
         moves++;
         player.updatePlayer();
@@ -60,7 +63,8 @@ public class Gameplay {
             String response = stdin.next();
             if(response.toLowerCase().equals("y")){
                 System.out.println("Carry on!");
-                nightEvents();
+                
+                
             }else if(response.toLowerCase().equals("n")){
                 daytime = true;
                 System.out.println("You sleep till morning...");
@@ -75,19 +79,18 @@ public class Gameplay {
     }
 
     private void nightEvents() {
-
-        //for (int i = 0; i < 5; i++) {
+        
             if (random.nextInt(100) < 70) {
                 System.out.println("You encounter an enemy!");
                 handleEnemyEncounter();
             } 
-   // }
+   
 }
 
 private void handleEnemyEncounter() {
     if (player.backpack.isEmpty()) {
         System.out.println("Your backpack is empty! You have no weapons to fight.");
-        // To Do
+        points -= 10;
         return;
     }
     player.displayBackpack();
@@ -96,7 +99,7 @@ private void handleEnemyEncounter() {
 
     int input = stdin.nextInt();
 
-  if (input >= 1 && input <= player.backpack.size()) {
+   if (input >= 1 && input <= player.backpack.size()) {
         Weapon selectedWeapon = player.backpack.get(input - 1); 
         boolean isEnemyDefeated = selectedWeapon.use();
 
