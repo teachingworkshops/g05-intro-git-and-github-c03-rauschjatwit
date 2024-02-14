@@ -73,13 +73,13 @@ public class Player {
                 input_is_valid = True;
             }
             else if(itemNumber == 2){
-                System.out.println("You switch out item 1\n");
+                System.out.println("You switch out item 2\n");
                 backpack.remove(2);
                 backpack.add(item);
                 input_is_valid = True;
             }
             else if(itemNumber == 3){
-                System.out.println("You switch out item 1\n");
+                System.out.println("You switch out item 3\n");
                 backpack.remove(3);
                 backpack.add(item);
                 input_is_valid = True;
