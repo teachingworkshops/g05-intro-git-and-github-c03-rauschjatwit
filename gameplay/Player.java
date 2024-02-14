@@ -1,7 +1,6 @@
 package gameplay;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import gameplay.weapon.Weapon;
 
@@ -17,8 +16,12 @@ public class Player {
         thirst=25;
     }
 
-    public void  addItemToBackpack(Weapon newWeapon){
+    public void addItemToBackpack(Weapon newWeapon){
         backpack.add(newWeapon);
+    }
+
+    public void remItemFromBackpack(int index){
+        backpack.remove(index);
     }
 
     public void updatePlayer(){
@@ -46,58 +49,12 @@ public class Player {
         return backpack.size() >= 3; 
     }
 
-    public boolean containsSame(Weapon weapon){
-        for(int i=0;i<backpack.size();i++){
-            if(weapon.equals(backpack.get(i))){
-                return true;
+    public boolean containsSame(Weapon item){
+        for (int i = 0; i < backpack.size(); i++){
+            if (!(item.toString().equals(backpack.get(i).toString()))){
+                return false;
             }
         }
-        return false;
-    }
-    public void chooseBackpackItem(Weapon foundItem) {
-        System.out.println("You found a " + foundItem.toString() + " in the chest!");
-        System.out.println("However, your backpack is full.");
-
-        displayBackpack();
-
-        Scanner action = new Scanner(System.in);
-        System.out.println("Enter the corresponding item number to swap the newly found item for an item in your backpack.");
-        System.out.println("Enter 0 to keep all items in your backpack.");
-        
-        int itemNumber = action.nextInt();
-
-        boolean input_is_valid = false;
-        
-        while(input_is_valid == false) {  
-            
-            if(itemNumber == 0){
-                System.out.println("You keep all your items\n");
-                input_is_valid = true;
-                }
-            if(itemNumber == 1){
-                System.out.println("You switch out item 1\n");
-                backpack.remove(1);
-                backpack.add(foundItem);
-                input_is_valid = true;
-            }
-            else if(itemNumber == 2){
-                System.out.println("You switch out item 2\n");
-                backpack.remove(2);
-                backpack.add(foundItem);
-                input_is_valid = true;
-            }
-            else if(itemNumber == 3){
-                System.out.println("You switch out item 3\n");
-                backpack.remove(3);
-                backpack.add(foundItem);
-                input_is_valid = true;
-            }
-            else{
-                System.out.println("Invalid selection. Please choose a valid inventory number.");
-            }
-         }
-
-        action.close();
-        
+        return true;
     }
 }
