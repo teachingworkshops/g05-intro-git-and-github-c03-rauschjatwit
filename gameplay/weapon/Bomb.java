@@ -18,4 +18,9 @@ public class Bomb extends Weapon{
     public String toString(){
         return "bomb";
     }
+
+    @Override
+    public boolean equals(Weapon weapon){
+        return weapon.getClass() == Bomb.class;
+    }
 }

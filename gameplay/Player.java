@@ -45,4 +45,14 @@ public class Player {
     public boolean isBackpackFull() {
         return backpack.size() >= 3; 
     }
+
+    public boolean containsSame(){
+        Weapon firstWeapon = backpack.get(0);
+        for(int i=1;i<backpack.size();i++){
+            if(firstWeapon.equals(backpack.get(i))){
+                return false;
+            }
+        }
+        return true;
+    }
 }

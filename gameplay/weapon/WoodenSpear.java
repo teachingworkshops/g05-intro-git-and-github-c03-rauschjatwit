@@ -23,4 +23,9 @@ public class WoodenSpear extends Weapon{
     public String toString(){
         return "wooden spear";
     }
+
+    @Override
+    public boolean equals(Weapon weapon){
+        return weapon.getClass() == WoodenSpear.class;
+    }
 }
