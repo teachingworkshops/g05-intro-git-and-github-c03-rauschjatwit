@@ -115,9 +115,12 @@ public class Gameplay {
             chestsOpened++;
             System.out.println("You've stumbled upon a mysterious chest!");
             Weapon foundItem = getRandomItem();
-            if (player.isBackpackFull() && !player.containsSame(foundItem)) {
-                //System.out.println("Your backpack is full. You can't pick up any more items.");
-                player.chooseBackpackItem(foundItem);
+            if (player.isBackpackFull()){
+                if( !player.containsSame(foundItem)){
+                    player.chooseBackpackItem(foundItem);
+                } else {
+                    System.out.println("Your backpack is full. You can't pick up any more items.");
+                }
             } else {
                 player.addItemToBackpack(foundItem); 
              //   System.out.println("You found a " + foundItem.getClass().getSimpleName() + " in the chest!");

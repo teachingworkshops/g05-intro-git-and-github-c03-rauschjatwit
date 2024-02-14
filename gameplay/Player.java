@@ -47,12 +47,13 @@ public class Player {
     }
 
     public boolean containsSame(Weapon weapon){
+        int numItems=0;
         for(int i=0;i<backpack.size();i++){
             if(weapon.equals(backpack.get(i))){
-                return true;
+                numItems++;
             }
         }
-        return false;
+        return numItems==3;
     }
     public void chooseBackpackItem(Weapon foundItem) {
         System.out.println("You found a " + foundItem.toString() + " in the chest!");
