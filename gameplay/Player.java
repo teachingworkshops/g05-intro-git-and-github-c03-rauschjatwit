@@ -49,9 +49,9 @@ public class Player {
         return backpack.size() >= 3; 
     }
 
-    public boolean containsSame(Weapon item){
-        for (int i = 0; i < backpack.size(); i++){
-            if (!(item.toString().equals(backpack.get(i).toString()))){
+    public boolean containsSame(Weapon weapon){
+        for(int i=0; i<backpack.size(); i++){
+            if(!(weapon.toString().equals(backpack.get(i).toString()))){
                 return false;
             }
         }

@@ -174,7 +174,6 @@ private void handleEnemyEncounter() {
 }
     public Weapon getRandomItem(){
         double randItem = Math.random();
-        randItem = 1;
         Bomb bomb = new Bomb();
         Sword sword = new Sword();
         WoodenSpear spear = new WoodenSpear();
