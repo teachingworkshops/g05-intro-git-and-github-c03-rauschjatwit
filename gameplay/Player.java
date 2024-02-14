@@ -58,31 +58,31 @@ public class Player {
         
         int itemNumber = action.nextInt();
 
-        bool input_is_valid = False;
+        boolean input_is_valid = false;
         
-        while(input_is_valid == False) {  
+        while(input_is_valid == false) {  
             
             if(itemNumber == 0){
                 System.out.println("You keep all your items\n");
-                input_is_valid = True;
+                input_is_valid = true;
                 }
             if(itemNumber == 1){
                 System.out.println("You switch out item 1\n");
                 backpack.remove(1);
-                backpack.add(item);
-                input_is_valid = True;
+                backpack.add(foundItem);
+                input_is_valid = true;
             }
             else if(itemNumber == 2){
                 System.out.println("You switch out item 2\n");
                 backpack.remove(2);
-                backpack.add(item);
-                input_is_valid = True;
+                backpack.add(foundItem);
+                input_is_valid = true;
             }
             else if(itemNumber == 3){
                 System.out.println("You switch out item 3\n");
                 backpack.remove(3);
-                backpack.add(item);
-                input_is_valid = True;
+                backpack.add(foundItem);
+                input_is_valid = true;
             }
             else{
                 System.out.println("Invalid selection. Please choose a valid inventory number.");
