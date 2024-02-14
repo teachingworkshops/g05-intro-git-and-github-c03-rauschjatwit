@@ -1,6 +1,7 @@
 package gameplay;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import gameplay.weapon.Weapon;
 
@@ -44,5 +45,22 @@ public class Player {
     }
     public boolean isBackpackFull() {
         return backpack.size() >= 3; 
+    }
+
+    public int chooseBackpackItem(Weapon foundItem) {
+        System.out.println("You found a " + foundItem.toString() + " in the chest!");
+        System.out.println("However, your backpack is full.");
+
+        displayBackpack();
+
+        Scanner action = new Scanner(System.in);
+        System.out.println("Enter the corresponding item number to swap the newly found item for an item in your backpack.");
+        System.out.println("Enter 0 to keep all items in your backpack.");
+        
+        int itemNumber = action.nextInt();
+
+        action.close();
+
+        return itemNumber;
     }
 }

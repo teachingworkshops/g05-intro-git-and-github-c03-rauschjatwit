@@ -114,10 +114,11 @@ public class Gameplay {
             // Additional 20% chance (cumulative 70%) of finding a chest
             chestsOpened++;
             System.out.println("You've stumbled upon a mysterious chest!");
+            Weapon foundItem = getRandomItem();
             if (player.isBackpackFull()) {
-                System.out.println("Your backpack is full. You can't pick up any more items.");
+                //System.out.println("Your backpack is full. You can't pick up any more items.");
+                player.chooseBackpackItem(foundItem);
             } else {
-                Weapon foundItem = getRandomItem();
                 player.addItemToBackpack(foundItem); 
              //   System.out.println("You found a " + foundItem.getClass().getSimpleName() + " in the chest!");
                 System.out.println("You found a " + foundItem.toString() + " in the chest!");
