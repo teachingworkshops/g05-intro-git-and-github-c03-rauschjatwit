@@ -32,3 +32,5 @@ Wooden spear:
 Sword:
 Unlimited uses, 75% chance of defeating an enemy, 15% chance of appearing in a chest
 
+**License**:
+MIT
