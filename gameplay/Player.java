@@ -46,7 +46,7 @@ public class Player {
         return backpack.size() >= 3; 
     }
 
-    public int chooseBackpackItem(Weapon foundItem) {
+    public void chooseBackpackItem(Weapon foundItem) {
         System.out.println("You found a " + foundItem.toString() + " in the chest!");
         System.out.println("However, your backpack is full.");
 
@@ -58,8 +58,38 @@ public class Player {
         
         int itemNumber = action.nextInt();
 
-        action.close();
+        bool input_is_valid = False;
+        
+        while(input_is_valid == False) {  
+            
+            if(itemNumber == 0){
+                System.out.println("You keep all your items\n");
+                input_is_valid = True;
+                }
+            if(itemNumber == 1){
+                System.out.println("You switch out item 1\n");
+                backpack.remove(1);
+                backpack.add(item);
+                input_is_valid = True;
+            }
+            else if(itemNumber == 2){
+                System.out.println("You switch out item 1\n");
+                backpack.remove(2);
+                backpack.add(item);
+                input_is_valid = True;
+            }
+            else if(itemNumber == 3){
+                System.out.println("You switch out item 1\n");
+                backpack.remove(3);
+                backpack.add(item);
+                input_is_valid = True;
+            }
+            else{
+                System.out.println("Invalid selection. Please choose a valid inventory number.");
+            }
+         }
 
-        return itemNumber;
+        action.close();
+        
     }
 }
