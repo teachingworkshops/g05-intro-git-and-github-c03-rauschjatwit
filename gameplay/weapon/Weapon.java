@@ -17,4 +17,8 @@ public abstract class Weapon {
     public String toString(){
         return "";
     }
+
+    public boolean equals(Weapon weapon){
+        return weapon.getClass() == Weapon.class;
+    }
 }

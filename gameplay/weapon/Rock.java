@@ -23,4 +23,9 @@ public class Rock extends Weapon{
     public String toString(){
         return "rock";
     }
+
+    @Override
+    public boolean equals(Weapon weapon){
+        return weapon.getClass() == Rock.class;
+    }
 }

@@ -46,6 +46,14 @@ public class Player {
         return backpack.size() >= 3; 
     }
 
+    public boolean containsSame(Weapon weapon){
+        for(int i=0;i<backpack.size();i++){
+            if(weapon.equals(backpack.get(i))){
+                return true;
+            }
+        }
+        return false;
+    }
     public void chooseBackpackItem(Weapon foundItem) {
         System.out.println("You found a " + foundItem.toString() + " in the chest!");
         System.out.println("However, your backpack is full.");
