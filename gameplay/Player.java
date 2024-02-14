@@ -19,7 +19,6 @@ public class Player {
 
     public void  addItemToBackpack(Weapon newWeapon){
         backpack.add(newWeapon);
-        
     }
 
     public void updatePlayer(){
