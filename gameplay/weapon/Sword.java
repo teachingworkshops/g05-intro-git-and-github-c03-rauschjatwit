@@ -24,8 +24,4 @@ public class Sword extends Weapon{
         return "sword";
     }
 
-    @Override
-    public boolean equals(Weapon weapon){
-        return weapon.getClass() == Sword.class;
-    }
 }

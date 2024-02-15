@@ -18,7 +18,4 @@ public abstract class Weapon {
         return "";
     }
 
-    public boolean equals(Weapon weapon){
-        return weapon.getClass() == Weapon.class;
-    }
 }
